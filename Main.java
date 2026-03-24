@@ -76,15 +76,13 @@ public class Main {
             new Client("Ola", "Kowalska",20, orders.get(2), false)
         );
 
-        //Test niemutowalności listy
-        //products.add(new Product("test", 20.1));
-        //products.get(2).price=30;
-        //products.set(0, new Product("Test", 10));
 
-
-        //Lista Nazwisk ludzi dorosłych (ciąg funkcji)
+        //Lista Nazwisk ludzi dorosłych
         System.out.println("Nazwiska dorosłych:");
-        printClientsNames().accept(getFilteredClients(olderThanFilter(18)).apply(clients));
+        final List<Client> names = getFilteredClients(olderThanFilter(18)).apply(clients);
+        printClientsNames().accept(names);
+        //Lub jednym ciągiem funkcji jak poniżej
+        //printClientsNames().accept(getFilteredClients(olderThanFilter(18)).apply(clients));
         //
 
         //mapa klientów i zarobek brutto na kazdym
